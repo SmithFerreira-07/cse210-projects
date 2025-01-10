@@ -16,5 +16,17 @@ class Program
         {
             Console.WriteLine("Congratulations! you pass with a B!");
         }
+        else if (gradeInt >= 70)
+        {
+            Console.WriteLine("You passed with a C, you can do better!");
+        }
+        else if (gradeInt >= 60)
+        {
+            Console.WriteLine("You got a D, you failed!");
+        }
+        else if (gradeInt < 60)
+        {
+            Console.WriteLine("You got a F grade, study harder next time");
+        }
     }
 }
