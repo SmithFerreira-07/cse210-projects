@@ -8,11 +8,18 @@ class Program
         List<int> numbers = new List<int>();
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
         int numberInput = 893812;
-        while (numberInput != 0)
+        while (true)
         {
             Console.WriteLine("Enter number: ");
             numberInput = int.Parse(Console.ReadLine());
+            if (numberInput == 0)
+            {
+                Console.WriteLine("BREAKING");
+                break;
+            }
             numbers.Add(numberInput);
+            
         }
+        Console.WriteLine(numbers.Count);
     }
 }
