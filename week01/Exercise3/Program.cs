@@ -1,36 +1,35 @@
 using System;
+using System.Formats.Asn1;
+using System.Net;
 
 class Program
 {
     static void Main(string[] args)
-    {
-        
-
-        
+    { 
         Console.WriteLine("What is the magic number?. ");
         string magicString = Console.ReadLine();
         int magicNumber = int.Parse(magicString);
-        Console.WriteLine("What is your guess? ");
-        string guess = Console.ReadLine();
-        int guessNumber = int.Parse(guess);
+        string answer = "";
         do
         {
-
-        
-        if (magicNumber > guessNumber)
-        {
-            Console.WriteLine("Higher");
-        }
-        else if (magicNumber < guessNumber)
-        {
-            Console.WriteLine("Lower");
-        }
-        else
-        {
-            Console.WriteLine("You guessed it!");
-        }
-
-        } while (magicNumber != guessNumber);
-        
+            Console.WriteLine("What is your guess?");
+            string guess = Console.ReadLine();
+            int guessInt = int.Parse(guess);
+            if (guessInt > magicNumber)
+            {
+                Console.WriteLine("Higher");
+                answer = "Higher";
+            }
+            else if (guessInt < magicNumber)
+            {
+                Console.WriteLine("Lower");
+                answer = "Lower";
+            }
+            else
+            {
+                Console.WriteLine("You Guessed It!");
+                answer = "Clear";
+            }
+        }while (answer == "Higher" || answer == "Lower");
     }
 }
