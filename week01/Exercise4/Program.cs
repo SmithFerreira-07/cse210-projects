@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -20,6 +21,9 @@ class Program
             numbers.Add(numberInput);
             
         }
-        Console.WriteLine(numbers.Count);
+        //Console.WriteLine(numbers.Count);
+        int totalSum = numbers.Sum();
+        double totalAverage = numbers.Average();
+        Console.WriteLine($"The sum is: {totalSum}");
     }
 }
