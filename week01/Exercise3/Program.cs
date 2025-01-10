@@ -5,12 +5,18 @@ class Program
     static void Main(string[] args)
     {
         
+
+        
         Console.WriteLine("What is the magic number?. ");
         string magicString = Console.ReadLine();
         int magicNumber = int.Parse(magicString);
         Console.WriteLine("What is your guess? ");
         string guess = Console.ReadLine();
         int guessNumber = int.Parse(guess);
+        do
+        {
+
+        
         if (magicNumber > guessNumber)
         {
             Console.WriteLine("Higher");
@@ -24,5 +30,7 @@ class Program
             Console.WriteLine("You guessed it!");
         }
 
+        } while (magicNumber != guessNumber);
+        
     }
 }
