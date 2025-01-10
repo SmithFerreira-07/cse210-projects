@@ -39,6 +39,5 @@ class Program
         DisplayWelcome();
         DisplayResult(PromptUserName(), SquareNumber(PromptUserNumber()));
         
-        
     }
 }
