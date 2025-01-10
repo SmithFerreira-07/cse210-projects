@@ -4,27 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
-
-        string name = "";
-        int numberInt = 920392;
+        
         //Console.WriteLine("Hello World! This is the Exercise5 Project.");
         static void DisplayWelcome()
         {
             Console.WriteLine("Welcome to the Program!");
 
         }
-        static string PromptUserName(string name)
+        static string PromptUserName()
         {
             Console.WriteLine("Please enter your name: ");
-            name = Console.ReadLine();
+            string name = Console.ReadLine();
             return name;
         }
 
-        static int PromptUserNumber(int numberInt)
+        static int PromptUserNumber()
         {
             Console.WriteLine("Please enter your favorite number: ");
             string number = Console.ReadLine();
-            numberInt = int.Parse(number);
+            int numberInt = int.Parse(number);
             return numberInt;
         }
 
@@ -39,10 +37,8 @@ class Program
         }
 
         DisplayWelcome();
-        PromptUserName(name);
-        PromptUserNumber(numberInt);
-        SquareNumber(numberInt);
-        DisplayResult(name, numberInt);
+        DisplayResult(PromptUserName(), SquareNumber(PromptUserNumber()));
+        
         
     }
 }
