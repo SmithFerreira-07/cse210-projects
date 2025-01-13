@@ -9,6 +9,7 @@ class Program
         Job job1 = new Job();
         Job job2 = new Job();
         Resume myResume = new Resume();
+        myResume._name = "Allison Rose";
         job1._jobTitle = "Software Engineer";
         job1._company = "Microsoft";
         job1._startYear = 2019;
@@ -19,9 +20,6 @@ class Program
         job2._endYear = 2023;
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
-        Console.WriteLine(myResume._jobs[0]._jobTitle);
-        //Console.WriteLine($"{job1._company}, {job2._company}");
-        //job1.DisplayJobDetails();
-        //job2.DisplayJobDetails();
+        myResume.Display();
     }
 }
