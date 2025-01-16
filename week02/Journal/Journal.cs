@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+
 
 public class Journal
 {
@@ -11,11 +14,16 @@ public class Journal
 
     public void DisplayAll()
     {
-        
+
+        foreach (var entry in _entries)
+        {
+            entry.Display();
+        }
     }
 
     public void SaveToFile(string file)
     {
+        string fileName = "JournalEntry.txt";
 
     }
 
