@@ -23,19 +23,24 @@ public class Journal
 
     public void SaveToFile(string file)
     {
-        string fileName = "JournalEntry.txt";
+        //string fileName = "JournalEntry.txt";
         using (StreamWriter writer = new StreamWriter(file))
         {
             foreach (var entry in _entries)
             {
-                writer.WriteLine($"{entry}");
+                writer.WriteLine($"{entry._date}");
+                writer.WriteLine($"{entry._promptText}");
+                writer.WriteLine($"{entry._entryText}");
             }
         }
+        Console.WriteLine("Journal Saved");
     }
 
     public void LoadFromFile(string file)
     {
         string fileName = "myFile.txt";
-        string [] lines = System.IO.File.ReadAllLines(fileName)
+        string [] lines = System.IO.File.ReadAllLines(fileName);
+        Console.WriteLine(lines);
+        
     }
 }
