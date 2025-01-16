@@ -29,9 +29,7 @@ public class Journal
         {
             foreach (var entry in _entries)
             {
-                writer.WriteLine($"{entry._date}");
-                writer.WriteLine($"{entry._promptText}");
-                writer.WriteLine($"{entry._entryText}");
+                writer.WriteLine($"{entry._date}---{entry._promptText}---{entry._entryText}");
             }
         }
         Console.WriteLine("Journal Saved");
@@ -48,7 +46,7 @@ public class Journal
         string[] lines = System.IO.File.ReadAllLines(file);
         foreach (string line in lines)
         {
-            string [] parts = line.Split("-");
+            string [] parts = line.Split("---");
             Entry myEntry = new Entry();
             myEntry._date = parts[0];
             myEntry._promptText = parts[1];
