@@ -24,11 +24,18 @@ public class Journal
     public void SaveToFile(string file)
     {
         string fileName = "JournalEntry.txt";
-
+        using (StreamWriter writer = new StreamWriter(file))
+        {
+            foreach (var entry in _entries)
+            {
+                writer.WriteLine($"{entry}");
+            }
+        }
     }
 
     public void LoadFromFile(string file)
     {
-
+        string fileName = "myFile.txt";
+        string [] lines = System.IO.File.ReadAllLines(fileName)
     }
 }
