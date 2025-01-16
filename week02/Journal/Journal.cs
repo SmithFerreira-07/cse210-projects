@@ -18,6 +18,7 @@ public class Journal
         foreach (var entry in _entries)
         {
             entry.Display();
+            
         }
     }
 
@@ -38,9 +39,24 @@ public class Journal
 
     public void LoadFromFile(string file)
     {
-        string fileName = "myFile.txt";
-        string [] lines = System.IO.File.ReadAllLines(fileName);
-        Console.WriteLine(lines);
+        if (!System.IO.File.Exists(file))
+        {
+            Console.WriteLine("Journal File not found.");
+            return;
+        }
+        _entries.Clear();
+        string[] lines = System.IO.File.ReadAllLines(file);
+        foreach (string line in lines)
+        {
+            string [] parts = line.Split("-");
+            Entry myEntry = new Entry();
+            myEntry._date = parts[0];
+            myEntry._promptText = parts[1];
+            myEntry._entryText = parts[2];
+            _entries.Add(myEntry);
+        }
+
+        Console.WriteLine("Journal Loaded!");
         
     }
 }
