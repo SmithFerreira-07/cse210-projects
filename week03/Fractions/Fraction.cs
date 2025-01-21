@@ -27,10 +27,16 @@ public class Fraction{
         _top = top;
         _bottom = bottom;
     }
+
     
-    public string GetFraction()
+    public string GetFractionString()
     {
         return $"{_top}/{_bottom}";
         
+    }
+
+    public double GetDecimalValue()
+    {
+        return (double)_top / _bottom;
     }
 }
