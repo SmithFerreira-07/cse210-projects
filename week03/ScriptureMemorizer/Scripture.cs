@@ -36,4 +36,24 @@ public class Scripture
        
     }
 
+    public string GetDisplayText()
+    {
+        string result = "";
+        foreach (Word word in _words)
+        {
+            result += word.GetDisplayText() + " ";
+        }
+        return result.Trim();
+    }
+
+     public bool IsCompletelyHidden()
+    {
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+                return false;
+        }
+        return true;
+    }
+
 }
