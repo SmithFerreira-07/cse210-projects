@@ -11,7 +11,8 @@ public class Scripture
         _words = new List<Word>();
 
         
-        foreach (var word in text.Split(' '))
+        string[] wordArray = text.Split(' ');
+        foreach (string word in wordArray)
         {
             _words.Add(new Word(word));
         }
@@ -20,10 +21,19 @@ public class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
-        var random = new Random();
-        int hiddenCount = 0
+        Random random = new Random();
+        int hiddenCount = 0;
 
-        
+        while (hiddenCount < numberToHide)
+        {
+            int index = random.Next(0, _words.Count);
+            if (!_words[index].IsHidden())
+            {
+                _words[index].Hide();
+                hiddenCount++;
+            }
+        }
        
     }
+
 }

@@ -30,8 +30,11 @@ public class Word
     {
         if (_isHidden)
         {
-            return new string('_', _text.Length);
+            return "_____";
         }
-        return _text;
+        else
+        {
+            return _text;
+        }
     }
 }
