@@ -4,6 +4,11 @@ public class ScriptureShelf
 {
     private List<Scripture> _scriptures;
 
+    public ScriptureShelf()
+    {
+        _scriptures = new List<Scripture>();
+    }
+
     public void AddScripture(Scripture scripture)
     {
         _scriptures.Add(scripture);

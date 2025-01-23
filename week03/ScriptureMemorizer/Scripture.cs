@@ -46,6 +46,11 @@ public class Scripture
         return result.Trim();
     }
 
+     public string GetReferenceText()
+    {
+        return _reference.GetDisplayText();
+    }
+
      public bool IsCompletelyHidden()
     {
         foreach (Word word in _words)
