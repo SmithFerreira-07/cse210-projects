@@ -2,7 +2,7 @@ using System;
 
 public class ScriptureShelf
 {
-    private List<Scripture>_scriptures;
+    private List<Scripture> _scriptures;
 
     public void AddScripture(Scripture scripture)
     {
