@@ -31,7 +31,7 @@ public class Order
         }
     }
 
-    public string GetLabel()
+    public string GetPackLabel()
     {
         string packLabel = "";
         foreach (var product in _products)
