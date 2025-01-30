@@ -14,6 +14,11 @@ public class Order
         _customer = customer;
     }
 
+     public void AddProduct(Product product)
+    {
+        _products.Add(product);
+    }
+
     public double GetTotalPrice()
     {
         double totalCost = 0;
@@ -36,7 +41,7 @@ public class Order
         string packLabel = "";
         foreach (var product in _products)
         {
-            packLabel += $"{product.GetName()} {product.GetId}\n";
+            packLabel += $"{product.GetName()} {product.GetId()}\n";
         }
         return packLabel;
     }
