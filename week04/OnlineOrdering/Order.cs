@@ -31,4 +31,18 @@ public class Order
         }
     }
 
+    public string GetLabel()
+    {
+        string packLabel = "";
+        foreach (var product in _products)
+        {
+            packLabel += $"{product.GetName()} {product.GetId}\n";
+        }
+        return packLabel;
+    }
+
+    public string GetShippLabel()
+    {
+        return $"Shipping Label:\n{_customer.GetName()}\n{_customer.GetFullAddress()}";
+    }
 }

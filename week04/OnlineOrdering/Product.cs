@@ -23,4 +23,15 @@ public class Product
     {
         return _price * _quantity;
     }
+
+    public string GetName()
+    {
+        return $"{_name}";
+    }
+
+    public string GetId()
+    {
+        return $"{_productId}";
+    }
+
 }

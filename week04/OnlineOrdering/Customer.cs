@@ -17,4 +17,14 @@ public class Customer
     {
         return _address.IsInUSA();
     }
+
+    public string GetName()
+    {
+        return $"{_name}";
+    }
+
+    public string GetFullAddress()
+    {
+        return _address.GetFullAddress();
+    }
 }
