@@ -31,6 +31,21 @@ public class Video
         return _comments.Count;
     }
 
+    public string GetTitle()
+    {
+        return _title;
+    }
+
+    public string GetAuthor()
+    {
+        return _author;
+    }
+
+    public int GetLength()
+    {
+        return _length;
+    }
+
     
 
 }
