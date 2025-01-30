@@ -46,6 +46,9 @@ public class Video
         return _length;
     }
 
-    
+    public IReadOnlyList<Comment> GetAllComments()
+    {
+        return _comments.AsReadOnly();
+    }
 
 }
