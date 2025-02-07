@@ -7,5 +7,19 @@ public class BreathingActivity : Activity
 
     }
 
+    public void Run()
+    {
+        ShowStartingMessage();
+
+        int duration = GetDuration();
+
+        DateTime endTime = DateTime.Now.AddSeconds(duration);
+
+        while (DateTime.Now < endTime)
+        {
+            
+        }
+
+    }
    
 }

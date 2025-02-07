@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 public class Activity
 {
@@ -15,6 +16,11 @@ public class Activity
         _description = description;
     }
 
+    protected int GetDuration()
+    {
+        return _duration;
+    }
+
     public void ShowStartingMessage()
     {
         Console.WriteLine($"Welcome to {_name}");
@@ -24,5 +30,22 @@ public class Activity
         string choice = Console.ReadLine();
         int choiceInt = int.Parse(choice);
         _duration = choiceInt;
+        
+    }
+
+    public void DisplayEndingMessage()
+    {
+        Console.WriteLine("Well Done!");
+        Console.WriteLine($"You have completed the {_name} in {_duration} ");
+    }
+
+    public void ShowCountDown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.Write(i + "");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
     }
 }
