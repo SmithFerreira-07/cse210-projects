@@ -33,6 +33,7 @@ class Program
                     return;
 
                 case "4":
+                    Console.WriteLine("Goodbye!");
                     return;
 
                 default:
