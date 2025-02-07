@@ -30,6 +30,8 @@ class Program
                     return;
 
                 case "3":
+                    ReflectingActivity reflectingActivity = new ReflectingActivity();
+                    reflectingActivity.Run();
                     return;
 
                 case "4":
@@ -37,8 +39,8 @@ class Program
                     return;
 
                 default:
-                    Console.WriteLine("failure, idk, test");
-                    break;
+                    Console.WriteLine("try again.");
+                    continue;
             }
 
         }

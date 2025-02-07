@@ -29,4 +29,39 @@ class ReflectingActivity : Activity
             "How can you keep this experience in mind in the future?"
         };
     }
+
+    private string GetRandomPrompt()
+    {
+        Random random = new Random();
+        return _prompts[random.Next(_prompts.Count)];
+    }
+
+    private string GetRandomQuestion()
+    {
+        Random random = new Random();
+        return _questions[random.Next(_questions.Count)];
+    }
+
+    private void DisplayPrompt()
+    {
+        Console.WriteLine(GetRandomPrompt());
+
+    }
+
+    private void DisplayQuestions()
+    {
+
+        Console.WriteLine(GetRandomQuestion());
+    }
+
+    public void Run()
+    {
+        int duration = GetDuration();
+        DisplayStartingMessage();
+        DisplayPrompt();
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.ReadLine();
+        Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
+    }
+
 }
