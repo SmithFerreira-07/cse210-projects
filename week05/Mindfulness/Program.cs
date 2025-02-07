@@ -17,6 +17,26 @@ class Program
 
             string choice = Console.ReadLine();
             Console.WriteLine();
+            switch (choice)
+            {
+                case "1":
+                    BreathingActivity activity = new BreathingActivity();
+                    activity.Run();
+                    break;
+                
+                case "2":
+                    return;
+
+                case "3":
+                    return;
+
+                case "4":
+                    return;
+
+                default:
+                    Console.WriteLine("failure, idk, test");
+                    break;
+            }
 
         }
     }

@@ -43,7 +43,18 @@ public class Activity
     {
         for (int i = seconds; i > 0; i--)
         {
-            Console.Write(i + "");
+            Console.Write(i + "    ");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
+    }
+
+    public void ShowSpinner(int seconds)
+    {
+        Console.Write("Processing");
+        for (int i = 0; i < seconds; i++)
+        {
+            Console.Write(".");
             Thread.Sleep(1000);
         }
         Console.WriteLine();
