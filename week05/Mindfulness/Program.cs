@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Mindfulness Project.");
 
-        while(true)
+        while (true)
         {
             Console.WriteLine("Menu Options");
             Console.WriteLine("1. Start Breathing Activity");
@@ -16,14 +16,8 @@ class Program
             Console.WriteLine("Select your Activity: ");
 
             string choice = Console.ReadLine();
-            Console.WriteLine()
+            Console.WriteLine();
 
-            switch (choice)
-            {
-                default:
-                    Console.WriteLine("test");
-                    break;
-            }
         }
     }
 }

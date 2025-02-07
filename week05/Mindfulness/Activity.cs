@@ -9,10 +9,20 @@ public class Activity
     private int _duration;
 
 
-    public Activity(string name, string description, int duration)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
+    }
+
+    public void ShowStartingMessage()
+    {
+        Console.WriteLine($"Welcome to {_name}");
+        Console.WriteLine(_description);
+
+        Console.WriteLine("How long in seconds, would you like for your session?: ");
+        string choice = Console.ReadLine();
+        int choiceInt = int.Parse(choice);
+        _duration = choiceInt;
     }
 }
