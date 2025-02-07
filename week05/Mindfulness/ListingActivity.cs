@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class ListingActivity : Activity
 {
-    private int _count;
 
     private List<string> _prompts;
 
@@ -23,13 +22,6 @@ public class ListingActivity : Activity
     {
         Random random = new Random();
         return _prompts[random.Next(_prompts.Count)];
-    }
-
-    private int SetGetCount()
-    {
-        List<string> answersList = GetListFromUser();
-        _count = answersList.Count();
-        return _count;
     }
 
     
@@ -53,7 +45,7 @@ public class ListingActivity : Activity
         DisplayStartingMessage();
         Console.WriteLine(GetRandomPrompt());
         List<string> answersList = GetListFromUser();
-        Console.WriteLine($"You listed {_count} items.");
+        Console.WriteLine($"You listed {answersList.Count()} items.");
         DisplayEndingMessage();
 
     }
