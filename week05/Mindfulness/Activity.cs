@@ -49,7 +49,7 @@ public class Activity
         Console.WriteLine();
     }
 
-    public void ShowSpinner(int seconds)
+    public void ShowPeriod(int seconds)
     {
         Console.Write("Processing");
         for (int i = 0; i < seconds; i++)
