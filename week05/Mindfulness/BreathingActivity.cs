@@ -9,7 +9,7 @@ public class BreathingActivity : Activity
 
     public void Run()
     {
-        ShowStartingMessage();
+        DisplayStartingMessage();
 
         int duration = GetDuration();
 

@@ -25,6 +25,8 @@ class Program
                     break;
                 
                 case "2":
+                    ListingActivity listingActivity = new ListingActivity();
+                    listingActivity.Run();
                     return;
 
                 case "3":

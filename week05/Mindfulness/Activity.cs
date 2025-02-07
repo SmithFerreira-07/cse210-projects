@@ -21,7 +21,7 @@ public class Activity
         return _duration;
     }
 
-    public void ShowStartingMessage()
+    public void DisplayStartingMessage()
     {
         Console.WriteLine($"Welcome to {_name}");
         Console.WriteLine(_description);

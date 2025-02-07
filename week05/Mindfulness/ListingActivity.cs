@@ -25,6 +25,15 @@ public class ListingActivity : Activity
         return _prompts[random.Next(_prompts.Count)];
     }
 
+    private int SetGetCount()
+    {
+        List<string> answersList = GetListFromUser();
+        _count = answersList.Count();
+        return _count;
+    }
+
+    
+
     private List<string> GetListFromUser()
     {   
         int duration = GetDuration();
@@ -37,6 +46,16 @@ public class ListingActivity : Activity
             answers.Add(userInput);
         }
         return answers;
+    }
+
+    public void Run()
+    {
+        DisplayStartingMessage();
+        Console.WriteLine(GetRandomPrompt());
+        List<string> answersList = GetListFromUser();
+        Console.WriteLine($"You listed {_count} items.");
+        DisplayEndingMessage();
+
     }
 
 }
