@@ -42,7 +42,11 @@ public class ListingActivity : Activity
 
     public void Run()
     {
+        
+        
         DisplayStartingMessage();
+        Console.WriteLine("Get Ready");
+        ShowPeriod(5);
         Console.WriteLine(GetRandomPrompt());
         List<string> answersList = GetListFromUser();
         Console.WriteLine($"You listed {answersList.Count()} items.");

@@ -10,8 +10,8 @@ class Program
         {
             Console.WriteLine("Menu Options");
             Console.WriteLine("1. Start Breathing Activity");
-            Console.WriteLine("2. Start Reflecting Activity");
-            Console.WriteLine("3. Start listing activity");
+            Console.WriteLine("2. Start Listing Activity");
+            Console.WriteLine("3. Start Reflecting Activity");
             Console.WriteLine("4. Quit");
             Console.WriteLine("Select your Activity: ");
 
