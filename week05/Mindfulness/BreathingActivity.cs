@@ -23,7 +23,7 @@ public class BreathingActivity : Activity
             Console.WriteLine("Breathe out...");
             ShowCountDown(3);
         }
-
+        DisplayEndingMessage();
     }
    
 }

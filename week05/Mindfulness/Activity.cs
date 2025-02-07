@@ -36,7 +36,7 @@ public class Activity
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well Done!");
-        Console.WriteLine($"You have completed the {_name} in {_duration} ");
+        Console.WriteLine($"You have completed the {_name} in {_duration} seconds!");
     }
 
     public void ShowCountDown(int seconds)
