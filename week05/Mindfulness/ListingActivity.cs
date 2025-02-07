@@ -30,6 +30,7 @@ public class ListingActivity : Activity
     private List<string> GetListFromUser()
     {   
         int duration = GetDuration();
+        Console.WriteLine($"debugging {duration}");
         List<string> answers = new List<string>();
         Console.WriteLine("List as many responses you can to the following prompt");
         DateTime finale = DateTime.Now.AddSeconds(duration);

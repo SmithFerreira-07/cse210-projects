@@ -56,12 +56,20 @@ class ReflectingActivity : Activity
 
     public void Run()
     {
+       DisplayStartingMessage();
+        
         int duration = GetDuration();
-        DisplayStartingMessage();
+        Console.WriteLine($"Debugging {duration}"); 
         DisplayPrompt();
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
         Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
+        DateTime finale = DateTime.Now.AddSeconds(duration);
+        while (DateTime.Now < finale)
+        {
+            DisplayQuestions();
+            ShowPeriod(5);
+        }
     }
 
 }
