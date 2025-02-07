@@ -18,4 +18,25 @@ public class ListingActivity : Activity
             "Think of a time when you did something truly selfless."
         };
     }
+
+    private string GetRandomPrompt()
+    {
+        Random random = new Random();
+        return _prompts[random.Next(_prompts.Count)];
+    }
+
+    private List<string> GetListFromUser()
+    {   
+        int duration = GetDuration();
+        List<string> answers = new List<string>();
+        Console.WriteLine("List as many responses you can to the following prompt");
+        DateTime finale = DateTime.Now.AddSeconds(duration);
+        while (DateTime.Now < finale)
+        {
+            string userInput = Console.ReadLine();
+            answers.Add(userInput);
+        }
+        return answers;
+    }
+
 }
