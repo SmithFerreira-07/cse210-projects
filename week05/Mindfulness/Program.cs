@@ -8,6 +8,7 @@ class Program
 
         while (true)
         {
+            Console.WriteLine();
             Console.WriteLine("Menu Options");
             Console.WriteLine("1. Start Breathing Activity");
             Console.WriteLine("2. Start Listing Activity");
@@ -22,24 +23,24 @@ class Program
                 case "1":
                     BreathingActivity activity = new BreathingActivity();
                     activity.Run();
-                    break;
+                    continue;
                 
                 case "2":
                     ListingActivity listingActivity = new ListingActivity();
                     listingActivity.Run();
-                    return;
+                    continue;
 
                 case "3":
                     ReflectingActivity reflectingActivity = new ReflectingActivity();
                     reflectingActivity.Run();
-                    return;
+                    continue;
 
                 case "4":
                     Console.WriteLine("Goodbye!");
                     return;
 
                 default:
-                    Console.WriteLine("try again.");
+                    Console.WriteLine("Try again, Use a valid number.");
                     continue;
             }
 

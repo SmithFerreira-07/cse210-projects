@@ -59,7 +59,7 @@ class ReflectingActivity : Activity
        DisplayStartingMessage();
         
         int duration = GetDuration();
-        Console.WriteLine($"Debugging {duration}"); 
+        
         DisplayPrompt();
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
@@ -68,8 +68,10 @@ class ReflectingActivity : Activity
         while (DateTime.Now < finale)
         {
             DisplayQuestions();
+            Console.WriteLine();
             ShowPeriod(5);
         }
+        DisplayEndingMessage();
     }
 
 }
