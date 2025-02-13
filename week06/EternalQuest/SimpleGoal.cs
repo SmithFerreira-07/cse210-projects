@@ -9,4 +9,9 @@ public class SimpleGoal : Goal
     {
         _isComplete = false;
     }
+
+    public override void RecordEvent()
+    {
+        _isComplete = true;
+    }
 }
