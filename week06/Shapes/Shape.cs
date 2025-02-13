@@ -1,4 +1,4 @@
-Using System;
+using System;
 
 public abstract class Shape
 {
@@ -11,11 +11,9 @@ public abstract class Shape
 
     public string GetColor()
     {
-        return _color
+        return _color;
     }
 
-    public abstract double GetArea()
-    {
-
-    }
+    public abstract double GetArea();
+    
 }
