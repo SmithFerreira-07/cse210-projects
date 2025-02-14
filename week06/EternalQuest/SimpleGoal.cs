@@ -1,5 +1,5 @@
 using System;
-
+using System.Text.Json;
 
 public class SimpleGoal : Goal
 {
@@ -31,5 +31,10 @@ public class SimpleGoal : Goal
             return $"{_shortName}: {_description} [ ]";
         }
         
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return JsonSerializer.Serialize(this);
     }
 }
