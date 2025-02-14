@@ -58,6 +58,36 @@ public class GoalManager
         Console.WriteLine("3. Checklist Goal");
         Console.WriteLine("");
         string type = Console.ReadLine();
+        Console.WriteLine("Write your Goal Name");
+        string name = Console.ReadLine();
+        Console.WriteLine("Write your Goal Description");
+        string description = Console.ReadLine();
+        Console.WriteLine("");
+        Console.WriteLine("Enter the amount of Points: ");
+        int points = int.Parse(Console.ReadLine());
+
+        switch (type)
+        {
+            case "1":
+                _goals.Add(new SimpleGoal(name, description, points));
+                break;
+            case "2":
+                _goals.Add(new EternalGoal(name, description, points));
+                break;
+            case "3":
+                Console.WriteLine("Enter target number:");
+                int target = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter bonus points:");
+                int bonus = int.Parse(Console.ReadLine());
+                _goals.Add(new ChecklistGoal(name, description, points, target, bonus));
+                break;
+            default:
+                Console.WriteLine("Wrong Input!, try again.");
+                break;
+
+        }
+
+
     }
 
 }
