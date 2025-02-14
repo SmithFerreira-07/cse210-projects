@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
+
 
 public class GoalManager
 {
@@ -10,13 +10,13 @@ public class GoalManager
 
     public void Start()
     {
-        while(true)
+        while (true)
         {
             Console.Clear();
             DisplayMenu();
             string choice = Console.ReadLine();
 
-            switch(choice)
+            switch (choice)
             {
                 case "1":
                     DisplayPlayerInfo();
@@ -156,13 +156,17 @@ public class GoalManager
     }
 
     private void SaveGoals()
-    {
+     {
         Console.Clear();
         Console.WriteLine("=== Save Goals ===");
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(_goals, options);
-        File.WriteAllText("myGoals.json", json);
-        Console.WriteLine("Saved Successfully!");
+        using (StreamWriter writer = new StreamWriter("goals.txt"))
+        {
+            foreach (var goal in _goals)
+            {
+                writer.WriteLine(goal.GetStringRepresentation());
+            }
+        }
+        Console.WriteLine("Goals saved successfully!");
         Console.WriteLine("=== Save Goals ===");
     }
 
@@ -171,17 +175,44 @@ public class GoalManager
     {
         Console.Clear();
         Console.WriteLine("=== Load Goals ===");
-        if (File.Exists("myGoals.json"))
+        if (File.Exists("myGoals.txt"))
         {
-            string json = File.ReadAllText("myGoals.json");
-            _goals = JsonSerializer.Deserialize<List<Goal>>(json);
-            Console.WriteLine("Loaded Goals Successfully!");
-        }
-        else
-        {
-            Console.WriteLine("No saved goals found.");
-        }
-        Console.WriteLine("=== Load Goals ===");
-    }
+            _goals = new List<Goal>();
+            using (StreamReader reader = new StreamReader("myGoals.txt"))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] parts = line.Split(':');
+                    string type = parts[0];
+                    string[] details = parts[1].Split(',');
+                    Goal goal = type switch
+                    {
+                        "SimpleGoal" => new SimpleGoal(
+                            details[0], 
+                            details[1], 
+                            int.Parse(details[2]), 
+                            bool.Parse(details[3]) 
+                        ),
+                        "EternalGoal" => new EternalGoal(
+                            details[0], 
+                            details[1], 
+                            int.Parse(details[2]) 
+                        ),
+                        "ChecklistGoal" => new ChecklistGoal(
+                            details[0], 
+                            details[1], 
+                            int.Parse(details[2]), 
+                            int.Parse(details[3]), 
+                            int.Parse(details[4]), 
+                            int.Parse(details[5]) 
+                        ),
+                        _ => throw new NotSupportedException($"Unknown goal type: {type}")
+                    };
+                    _goals.Add(goal);
+                }
+            }
 
+        }
+    }
 }

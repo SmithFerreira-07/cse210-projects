@@ -10,7 +10,16 @@ public class ChecklistGoal : Goal
 
     public ChecklistGoal(string name, string description, int points, int target, int bonus) : base(name, description, points)
     {
+        _type = "ChecklistGoal";
         _amountCompleted = 0;
+        _target = target;
+        _bonus = bonus;
+    }
+
+    public ChecklistGoal(string name, string description, int points, int target, int bonus, int amountCompleted) : base(name, description, points)
+    {
+        _type = "ChecklistGoal";
+        _amountCompleted = amountCompleted;
         _target = target;
         _bonus = bonus;
     }
@@ -30,7 +39,7 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"{_shortName}: {_description} Completed {_amountCompleted} times your Goal is {_target}";
+        return $"{_type}:{_shortName},{_description},{_points},{_target},{_bonus},{_amountCompleted}";
     }
 
     public override string GetStringRepresentation()
