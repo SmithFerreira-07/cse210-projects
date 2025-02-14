@@ -36,6 +36,6 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return JsonSerializer.Serialize(this);
+        return $"{_type}:{_shortName},{_description},{_points},{_isComplete}";
     }
 }

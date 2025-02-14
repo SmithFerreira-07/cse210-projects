@@ -1,5 +1,5 @@
 using System;
-using System.Text.Json;
+
 public class ChecklistGoal : Goal
 {
     private int _amountCompleted;
@@ -44,6 +44,6 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return JsonSerializer.Serialize(this);
+          return $"{_type}:{_shortName},{_description},{_points},{_target},{_bonus},{_amountCompleted}";
     }
 }
