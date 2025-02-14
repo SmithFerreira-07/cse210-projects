@@ -25,7 +25,18 @@ public class GoalManager
 
             switch(choice)
             {
-                    
+                 case "1":
+                    DisplayPlayerInfo();
+                    break;
+                case "2":
+                    ListGoalNames();
+                    break;
+                case "3":
+                    ListGoalDetails();
+                    break;
+                case "4":
+                    CreateGoal();
+                    break;
             }
         }
     }
@@ -84,7 +95,6 @@ public class GoalManager
             default:
                 Console.WriteLine("Wrong Input!, try again.");
                 break;
-
         }
 
 
