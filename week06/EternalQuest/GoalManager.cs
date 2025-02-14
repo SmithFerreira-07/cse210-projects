@@ -104,7 +104,16 @@ public class GoalManager
     {
         Console.WriteLine("Enter the goal name you want to record: ");
         string name = Console.ReadLine()?.Trim();
-        
+        var goal = _goals.Find(g => g.GetDetailsString().Contains(name));
+        if (goal != null)
+        {
+            goal.RecordEvent();
+            _score += goal.GetPoints();
+        }
+        else
+        {
+            Console.WriteLine("Goal not found.");
+        }
     }
 
 }
