@@ -50,6 +50,17 @@ public class GoalManager
         }
     }
 
+     private void CalculateBonusPoints()
+    {
+        int goalsRecordedToday = _goals.Count(g => g.GetLastRecordedDate().Date == DateTime.Today);
+        if (goalsRecordedToday > 1)
+        {
+            int bonusPoints = (goalsRecordedToday - 1) * 50;
+            _score += bonusPoints;
+            Console.WriteLine($"You earned {bonusPoints} bonus points for completing {goalsRecordedToday} goals today!");
+        }
+    }
+
     private void DisplayMenu()
     {
         Console.WriteLine("=== Goal Manager ===");
@@ -147,6 +158,7 @@ public class GoalManager
         {
             goal.RecordEvent();
             _score += goal.GetPoints();
+            CalculateBonusPoints();
         }
         else
         {

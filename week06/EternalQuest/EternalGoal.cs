@@ -5,6 +5,7 @@ public class EternalGoal : Goal
     public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
         _type = "EternalGoal";
+        _lastRecordedDate = DateTime.Now;
     }
 
     public override void RecordEvent()

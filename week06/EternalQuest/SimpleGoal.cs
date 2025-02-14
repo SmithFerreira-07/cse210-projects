@@ -14,6 +14,7 @@ public class SimpleGoal : Goal
     public override void RecordEvent()
     {
         _isComplete = true;
+        _lastRecordedDate = DateTime.Now;
     }
 
     public override bool IsComplete()
