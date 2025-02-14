@@ -17,4 +17,9 @@ public class EternalGoal : Goal
         return false;
     }
 
+    public override string GetDetailsString()
+    {
+        return $"{_shortName}: {_description} [Eternal]";
+    }
+
 }

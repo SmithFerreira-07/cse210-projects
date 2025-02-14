@@ -27,4 +27,9 @@ public class ChecklistGoal : Goal
     {
         return _amountCompleted >= _target;
     }
+
+    public override string GetDetailsString()
+    {
+        return $"{_shortName}: {_description} Completed {_amountCompleted} times your Goal is {_target}";
+    }
 }

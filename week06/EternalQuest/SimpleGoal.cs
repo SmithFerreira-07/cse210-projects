@@ -19,4 +19,17 @@ public class SimpleGoal : Goal
     {
         return _isComplete;
     }
+
+    public override string GetDetailsString()
+    {
+        if (IsComplete() == true)
+        {
+            return $"{_shortName}: {_description} [X]";
+        }
+        else
+        {
+            return $"{_shortName}: {_description} [ ]";
+        }
+        
+    }
 }
