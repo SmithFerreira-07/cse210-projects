@@ -100,4 +100,11 @@ public class GoalManager
 
     }
 
+    private void RecordEvent()
+    {
+        Console.WriteLine("Enter the goal name you want to record: ");
+        string name = Console.ReadLine()?.Trim();
+        
+    }
+
 }
