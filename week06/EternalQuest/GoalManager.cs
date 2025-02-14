@@ -116,4 +116,27 @@ public class GoalManager
         }
     }
 
+    private void SaveGoals()
+    {
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(_goals, options);
+        File.WriteAllText("myGoals.json", json);
+        Console.WriteLine("Saved Successfully!");
+    }
+
+
+    private void LoadGoals()
+    {
+        if (File.Exists("myGoals.json"))
+        {
+            string json = File.ReadAllText("myGoals.json");
+            _goals = JsonSerializer.Deserialize<List<Goal>>(json);
+            Console.WriteLine("Loaded Goals Successfully!");
+        }
+        else
+        {
+            Console.WriteLine("No saved goals found.");
+        }
+    }
+
 }
